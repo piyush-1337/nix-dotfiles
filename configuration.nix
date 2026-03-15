@@ -5,126 +5,139 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+imports =
+  [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.auto-optimise-store = true;
-  nixpkgs.config.allowUnfree = true;
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
+nix.settings.auto-optimise-store = true;
+nixpkgs.config.allowUnfree = true;
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
-  
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+hardware.graphics = {
+  enable = true;
+  enable32Bit = true;
+};
 
-  networking.hostName = "nixos-btw"; # Define your hostname.
+nix.gc = {
+  automatic = true;
+  dates = "weekly";
+  options = "--delete-older-than 7d";
+};
 
-  # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
-  programs.dconf.enable = true;
+# Use the systemd-boot EFI boot loader.
+boot.loader.systemd-boot.enable = true;
+boot.loader.efi.canTouchEfiVariables = true;
 
-  # Set your time zone.
-  time.timeZone = "Asia/Kolkata";
+networking.hostName = "nixos-btw"; # Define your hostname.
 
-  services.displayManager.ly = {
-    enable = true;
-  };
+# Configure network connections interactively with nmcli or nmtui.
+networking.networkmanager.enable = true;
+programs.dconf.enable = true;
 
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
+# Set your time zone.
+time.timeZone = "Asia/Kolkata";
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    settings = {
-      General = {
-        # Shows battery charge of connected devices on supported
-        # Bluetooth adapters. Defaults to 'false'.
-        Experimental = true;
-        # When enabled other devices can connect faster to us, however
-        # the tradeoff is increased power consumption. Defaults to
-        # 'false'.
-        FastConnectable = true;
-      };
-      Policy = {
-        # Enable all controllers when they are found. This includes
-        # adapters present on start as well as adapters that are plugged
-        # in later on. Defaults to 'true'.
-        AutoEnable = true;
-      };
+services.displayManager.ly = {
+  enable = true;
+};
+services.xserver.videoDrivers = [ "nvidia" ];
+
+hardware.bluetooth = {
+  enable = true;
+  powerOnBoot = true;
+  settings = {
+    General = {
+      # Shows battery charge of connected devices on supported
+      # Bluetooth adapters. Defaults to 'false'.
+      Experimental = true;
+      # When enabled other devices can connect faster to us, however
+      # the tradeoff is increased power consumption. Defaults to
+      # 'false'.
+      FastConnectable = true;
+    };
+    Policy = {
+      # Enable all controllers when they are found. This includes
+      # adapters present on start as well as adapters that are plugged
+      # in later on. Defaults to 'true'.
+      AutoEnable = true;
     };
   };
-  services.blueman.enable = true;
+};
+services.blueman.enable = true;
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = false;
-    nvidiaSettings = true;
+hardware.nvidia = {
+  modesetting.enable = true;
+  open = false;
+  nvidiaSettings = true;
+  powerManagement.enable = true;
+  powerManagement.finegrained = true;
+
+  prime = {
+    offload.enable = true;
+    offload.enableOffloadCmd = true;
+    
+    intelBusId = "PCI:0:2:0"; 
+    nvidiaBusId = "PCI:1:0:0"; 
   };
+};
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+# Configure network proxy if necessary
+# networking.proxy.default = "http://user:password@proxy:port/";
+# networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
+# Select internationalisation properties.
+i18n.defaultLocale = "en_US.UTF-8";
+# console = {
+#   font = "Lat2-Terminus16";
+#   keyMap = "us";
+#   useXkbConfig = true; # use xkb.options in tty.
+# };
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
+# Enable the X11 windowing system.
+# services.xserver.enable = true;
 
 
-  
 
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
+# Configure keymap in X11
+# services.xserver.xkb.layout = "us";
+# services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
+# Enable CUPS to print documents.
+# services.printing.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.piyush = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
-  };
+# Enable sound.
+# services.pulseaudio.enable = true;
+# OR
+# services.pipewire = {
+#   enable = true;
+#   pulse.enable = true;
+# };
 
-  environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
+# Enable touchpad support (enabled default in most desktopManager).
+# services.libinput.enable = true;
+# Define a user account. Don't forget to set a password with ‘passwd’.
+users.users.piyush = {
+  isNormalUser = true;
+  extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+};
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ 
-        pkgs.xdg-desktop-portal-gtk 
-        pkgs.xdg-desktop-portal-hyprland
-    ];
-    config.common.default = "*";
-  };
+environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
 
-  environment.variables = {
-    EDITOR = "nvim";
-    SUDO_EDITOR = "nvim";
-  };
+xdg.portal = {
+  enable = true;
+  extraPortals = [ 
+      pkgs.xdg-desktop-portal-gtk 
+      pkgs.xdg-desktop-portal-hyprland
+  ];
+  config.common.default = "*";
+};
+
+environment.variables = {
+  EDITOR = "nvim";
+  SUDO_EDITOR = "nvim";
+};
   # users.users.alice = {
   #   isNormalUser = true;
   #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.

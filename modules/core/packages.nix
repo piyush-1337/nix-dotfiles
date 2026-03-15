@@ -16,5 +16,8 @@
         tmux
         nautilus
         fastfetch
+        mpvpaper
+        hyprpaper
+        swww
     ];
 }
