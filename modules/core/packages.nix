@@ -19,6 +19,6 @@
         mpvpaper
         hyprpaper
         swww
-        nerd-fonts.fira-code
+        nerd-fonts.geist-mono
     ];
 }
