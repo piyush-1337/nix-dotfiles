@@ -2,8 +2,6 @@
 
 {
     home.packages = with pkgs; [
-        (nerd-fonts.override { fonts = [ "FiraCode" ]; })
-
         bat
         ripgrep
         nodejs
@@ -21,5 +19,6 @@
         mpvpaper
         hyprpaper
         swww
+        nerd-fonts.fira-code
     ];
 }
