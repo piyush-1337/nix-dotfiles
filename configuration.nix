@@ -39,6 +39,7 @@ networking.firewall.checkReversePath = false;
 services.resolved.enable = true;
 services.gnome.gnome-keyring.enable = true;
 security.pam.services.ly.enableGnomeKeyring = true;
+security.pam.services.hyprlock = {};
 
 programs.dconf.enable = true;
 

@@ -13,11 +13,11 @@
         ./modules/terminal/kitty.nix
         ./modules/editors/nvim.nix
         ./modules/browser/firefox.nix
-        ./modules/wm/hyprland.nix
         ./modules/core/packages.nix
         ./modules/desktop/gtk.nix
         ./modules/shell/direnv.nix
+        ./modules/hypr/hyprland.nix
+        ./modules/hypr/hypridle.nix
+        ./modules/hypr/hyprlock.nix
     ];
-
-
 }

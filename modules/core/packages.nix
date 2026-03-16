@@ -20,5 +20,6 @@
         hyprpaper
         swww
         nerd-fonts.geist-mono
+        btop
     ];
 }
