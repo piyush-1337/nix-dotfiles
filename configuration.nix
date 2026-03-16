@@ -45,7 +45,6 @@ services.displayManager.ly = {
   enable = true;
 };
 services.xserver.videoDrivers = [ "nvidia" ];
-services.cloudflare-warp.enable = true;
 
 hardware.bluetooth = {
   enable = true;
