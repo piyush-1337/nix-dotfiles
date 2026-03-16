@@ -34,7 +34,11 @@ networking.hostName = "nixos-btw"; # Define your hostname.
 # Configure network connections interactively with nmcli or nmtui.
 networking.networkmanager.enable = true;
 networking.networkmanager.dns = "systemd-resolved";
+networking.firewall.checkReversePath = false;
+
 services.resolved.enable = true;
+services.gnome.gnome-keyring.enable = true;
+security.pam.services.ly.enableGnomeKeyring = true;
 
 programs.dconf.enable = true;
 
@@ -161,6 +165,7 @@ environment.variables = {
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
+    proton-vpn-cli
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
