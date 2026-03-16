@@ -33,6 +33,9 @@ networking.hostName = "nixos-btw"; # Define your hostname.
 
 # Configure network connections interactively with nmcli or nmtui.
 networking.networkmanager.enable = true;
+networking.networkmanager.dns = "systemd-resolved";
+services.resolved.enable = true;
+
 programs.dconf.enable = true;
 
 # Set your time zone.
