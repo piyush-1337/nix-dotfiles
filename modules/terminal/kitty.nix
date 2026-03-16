@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       shell = "${pkgs.fish}/bin/fish";
-      font_family = "JetBrainsMono Nerd Font";
+      font_family = "FiraCode Nerd Font";
       font_size = 16;
       bold_font = "auto";
       italic_font = "auto";
