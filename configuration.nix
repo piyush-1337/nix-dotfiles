@@ -28,6 +28,7 @@ nix.gc = {
 # Use the systemd-boot EFI boot loader.
 boot.loader.systemd-boot.enable = true;
 boot.loader.efi.canTouchEfiVariables = true;
+boot.blacklistedKernelModules = [ "spd5118" ];
 
 networking.hostName = "nixos-btw"; # Define your hostname.
 
