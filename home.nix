@@ -16,6 +16,7 @@
         ./modules/wm/hyprland.nix
         ./modules/core/packages.nix
         ./modules/desktop/gtk.nix
+        ./modules/shell/direnv.nix
     ];
 
 
