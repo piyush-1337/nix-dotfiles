@@ -11,6 +11,7 @@
         wireplumber
         unzip
         nixd
+        nixfmt
         tree
         tmux
         nautilus
