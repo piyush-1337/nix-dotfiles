@@ -1,17 +1,17 @@
 { ... }:
 
 {
-    programs.bash = {
-        enable = true;
-        shellAliases = {
-            c = "clear";
-            nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw";
-        };
-
-        profileExtra = ''
-            if [ -z $DISPLAY ] && [ -z "$WAYLAND_DISPLAY"] && [ "$(tty)" = "/dev/tty1" ]; then
-                exec start-hyprland
-            fi
-        '';
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      c = "clear";
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw";
     };
+
+    profileExtra = ''
+      if [ -z $DISPLAY ] && [ -z "$WAYLAND_DISPLAY"] && [ "$(tty)" = "/dev/tty1" ]; then
+          exec start-hyprland
+      fi
+    '';
+  };
 }

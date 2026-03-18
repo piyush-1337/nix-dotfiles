@@ -11,7 +11,7 @@
     historyLimit = 50000;
     mouse = true;
     keyMode = "vi";
-    
+
     # Plugins managed by Nix
     plugins = with pkgs.tmuxPlugins; [
       vim-tmux-navigator

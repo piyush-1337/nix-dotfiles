@@ -1,25 +1,25 @@
 { pkgs, ... }:
 
 {
-    home.packages = with pkgs; [
-        bat
-        ripgrep
-        nodejs
-        gcc
-        brightnessctl
-        playerctl
-        wireplumber
-        unzip
-        nixd
-        nixfmt
-        tree
-        tmux
-        nautilus
-        fastfetch
-        mpvpaper
-        hyprpaper
-        swww
-        nerd-fonts.geist-mono
-        btop
-    ];
+  home.packages = with pkgs; [
+    bat
+    ripgrep
+    nodejs
+    gcc
+    brightnessctl
+    playerctl
+    wireplumber
+    unzip
+    nixd
+    nixfmt
+    tree
+    tmux
+    nautilus
+    fastfetch
+    mpvpaper
+    hyprpaper
+    swww
+    nerd-fonts.geist-mono
+    btop
+  ];
 }

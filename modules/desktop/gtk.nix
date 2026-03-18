@@ -26,43 +26,43 @@ let
   '';
 in
 {
-    dconf = {
-        enable = true;
-        settings = {
-            "org/gnome/desktop/interface" = {
-                color-scheme = "prefer-dark";
-            };
-        };
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
+  };
+
+  gtk = {
+    enable = true;
+
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+    gtk3 = {
+      extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
+      extraCss = nautilusTransparentCss;
+    };
+    gtk4 = {
+      extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
+      extraCss = nautilusTransparentCss;
     };
 
-    gtk = {
-        enable = true;
-        
-        theme = {
-            name = "Adwaita-dark";
-            package = pkgs.gnome-themes-extra;
-        };
-        gtk3 = {
-            extraConfig = {
-                gtk-application-prefer-dark-theme = 1;
-            };
-            extraCss = nautilusTransparentCss;
-        };
-        gtk4 = {
-            extraConfig = {
-                gtk-application-prefer-dark-theme = 1;
-            };
-            extraCss = nautilusTransparentCss;
-        };
-
-        iconTheme = {
-            name = "Papirus-Dark";
-            package = pkgs.papirus-icon-theme;
-        };
-        cursorTheme = {
-            name = "Bibata-Modern-Ice";
-            package = pkgs.bibata-cursors;
-            size = 16;
-        };
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
+    cursorTheme = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 16;
+    };
+  };
 }

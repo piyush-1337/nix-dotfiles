@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-    programs.hyprlock = {
-        enable = true;
-    };
+  programs.hyprlock = {
+    enable = true;
+  };
 }
