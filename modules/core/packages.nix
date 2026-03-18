@@ -21,6 +21,5 @@
     swww
     nerd-fonts.geist-mono
     btop
-    spotify-player
   ];
 }

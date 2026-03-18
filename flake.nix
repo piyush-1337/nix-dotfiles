@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -14,7 +18,8 @@
       self,
       nixpkgs,
       home-manager,
-    }:
+      ...
+    }@inputs:
     {
       nixosConfigurations.nixos-btw = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -27,6 +32,7 @@
               useUserPackages = true;
               users.piyush = import ./home.nix;
               backupFileExtension = "backup";
+              extraSpecialArgs = { inherit inputs; };
             };
           }
         ];

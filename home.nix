@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   home.username = "piyush";
@@ -19,5 +24,6 @@
     ./modules/hypr/hypridle.nix
     ./modules/hypr/hyprlock.nix
     ./modules/browser/chromium.nix
+    ./modules/apps/spotify.nix
   ];
 }
