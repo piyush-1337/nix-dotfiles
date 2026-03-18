@@ -19,5 +19,6 @@
         ./modules/hypr/hyprland.nix
         ./modules/hypr/hypridle.nix
         ./modules/hypr/hyprlock.nix
+        ./modules/browser/chromium.nix
     ];
 }

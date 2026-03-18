@@ -6,7 +6,6 @@
         ripgrep
         nodejs
         gcc
-        gemini-cli-bin
         brightnessctl
         playerctl
         wireplumber

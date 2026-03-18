@@ -88,6 +88,9 @@
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw";
       nfu = "sudo nix flake update --flake ~/nixos-dotfiles/";
     };
+    functions = {
+      mkcd = "mkdir -p $argv[1]; and cd $argv[1]";
+    };
     interactiveShellInit = ''
       if status is-interactive
         and not set -q TMUX
