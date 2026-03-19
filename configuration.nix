@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 {
   config,
   lib,
@@ -129,6 +125,14 @@
   #   pulse.enable = true;
   # };
 
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -137,6 +141,7 @@
     extraGroups = [
       "wheel"
       "networkmanager"
+      "docker"          # no need to sudo to run docker things
     ]; # Enable ‘sudo’ for the user.
   };
 
