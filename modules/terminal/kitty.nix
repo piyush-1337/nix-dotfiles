@@ -26,7 +26,7 @@
       selection_foreground = "none";
       linux_display_server = "wayland";
 
-      cursor_trail = 1;
+      cursor_trail = 3;
     };
   };
 }
