@@ -422,11 +422,6 @@ return { -- LSP Configuration & Plugins
           },
         },
       },
-      taplo = {
-        settings = {
-          executeCommands = true,
-        },
-      },
     }
 
     -- Ensure the servers and tools above are installed
