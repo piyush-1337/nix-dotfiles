@@ -53,6 +53,7 @@ in
         gtk-application-prefer-dark-theme = 1;
       };
       extraCss = nautilusTransparentCss;
+      theme = null;
     };
 
     iconTheme = {
