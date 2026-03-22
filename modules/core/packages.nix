@@ -21,5 +21,8 @@
     swww
     nerd-fonts.geist-mono
     btop
+    matugen
+    waypaper
+    ffmpeg
   ];
 }

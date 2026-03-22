@@ -132,9 +132,27 @@ return { -- Autocompletion
       sorting = {
         priority_weight = 2,
         comparators = {
+          cmp.config.compare.exact,
+
+          -- Force snippets to the bottom of the list
+          function(entry1, entry2)
+            local kind1 = entry1:get_kind()
+            local kind2 = entry2:get_kind()
+            local is_snippet1 = kind1 == cmp.lsp.CompletionItemKind.Snippet
+            local is_snippet2 = kind2 == cmp.lsp.CompletionItemKind.Snippet
+            
+            if is_snippet1 ~= is_snippet2 then
+              return not is_snippet1 -- Returns true if entry1 is NOT a snippet
+            end
+          end,
+
+          cmp.config.compare.score,
+          cmp.config.compare.recently_used,
+          cmp.config.compare.locality,
+
+          -- custom kind sorter (acts as a tie-breaker for remaining items)
           function(entry1, entry2)
             local kind_priority = {
-              -- Using numeric LSP kinds directly
               [cmp.lsp.CompletionItemKind.Field] = 100,
               [cmp.lsp.CompletionItemKind.Property] = 100,
               [cmp.lsp.CompletionItemKind.Variable] = 90,
@@ -152,16 +170,14 @@ return { -- Autocompletion
               [cmp.lsp.CompletionItemKind.Text] = 5,
             }
 
-            local kind1 = kind_priority[entry1.completion_item.kind] or 0
-            local kind2 = kind_priority[entry2.completion_item.kind] or 0
+            local kind1 = kind_priority[entry1:get_kind()] or 0
+            local kind2 = kind_priority[entry2:get_kind()] or 0
 
             if kind1 ~= kind2 then
               return kind1 > kind2
             end
           end,
 
-          cmp.config.compare.score,
-          cmp.config.compare.exact,
           cmp.config.compare.offset,
           cmp.config.compare.order,
         },

@@ -21,6 +21,12 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-ocl
+      intel-vaapi-driver
+    ];
   };
 
   nix.gc = {
@@ -43,6 +49,7 @@
 
   services.resolved.enable = true;
   services.gnome.gnome-keyring.enable = true;
+  services.upower.enable = true;
   security.pam.services.ly.enableGnomeKeyring = true;
   security.pam.services.hyprlock = { };
 
@@ -141,7 +148,7 @@
     extraGroups = [
       "wheel"
       "networkmanager"
-      "docker"          # no need to sudo to run docker things
+      "docker" # no need to sudo to run docker things
     ]; # Enable ‘sudo’ for the user.
   };
 

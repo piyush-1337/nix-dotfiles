@@ -25,5 +25,7 @@
     ./modules/hypr/hyprlock.nix
     ./modules/browser/chromium.nix
     ./modules/apps/spotify.nix
+    ./modules/desktop/quickshell.nix
+    ./modules/apps/obs.nix
   ];
 }
