@@ -27,5 +27,6 @@
     ./modules/apps/spotify.nix
     ./modules/desktop/quickshell.nix
     ./modules/apps/obs.nix
+    ./modules/core/screenshot.nix
   ];
 }
