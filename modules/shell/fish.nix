@@ -85,7 +85,7 @@
     enable = true;
     shellAliases = {
       c = "clear";
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw";
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#piyushbtw";
       nfu = "sudo nix flake update --flake ~/nixos-dotfiles/";
     };
     functions = {
