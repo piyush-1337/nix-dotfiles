@@ -24,6 +24,6 @@
     matugen
     waypaper
     ffmpeg
-    nvtopPackages.nvidia
+    # nvtopPackages.nvidia  # pulling massive cuda libs
   ];
 }

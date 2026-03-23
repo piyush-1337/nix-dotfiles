@@ -5,7 +5,7 @@
     enable = true;
     shellAliases = {
       c = "clear";
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw";
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#piyushbtw";
     };
 
     profileExtra = ''

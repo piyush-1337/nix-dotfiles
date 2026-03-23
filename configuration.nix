@@ -22,11 +22,11 @@
     enable = true;
     enable32Bit = true;
 
-    # if i ever want to go back to hybrid mode keep the intel drivers
+    # if i ever want to go back to hybrid mode uncomment intel drivers
     extraPackages = with pkgs; [
-      intel-media-driver
-      intel-ocl
-      intel-vaapi-driver
+      # intel-media-driver
+      # intel-ocl
+      # intel-vaapi-driver
       nvidia-vaapi-driver
     ];
   };
