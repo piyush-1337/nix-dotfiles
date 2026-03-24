@@ -41,7 +41,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.blacklistedKernelModules = [ "spd5118" ];
-
+  boot.kernelParams = [
+    "mem_sleep_default=deep"
+    "nvidia-drm.fbdev=0"
+  ];
   networking.hostName = "piyushbtw"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.

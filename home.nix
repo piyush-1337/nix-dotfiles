@@ -28,5 +28,6 @@
     ./modules/desktop/quickshell.nix
     ./modules/apps/obs.nix
     ./modules/core/screenshot.nix
+    ./modules/apps/vesktop.nix
   ];
 }
