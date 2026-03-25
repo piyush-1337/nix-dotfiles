@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-  home.packages = with pkgs; [
+  home.packages = [
     inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
   xdg.configFile."quickshell" = {
