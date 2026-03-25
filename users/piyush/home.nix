@@ -20,7 +20,7 @@
     ../../modules/home-manager/hypr/hyprlock.nix
     ../../modules/home-manager/browser/chromium.nix
     ../../modules/home-manager/apps/spotify.nix
-    ../../modules/home-manager/desktop/quickshell.nix
+    # ../../modules/home-manager/desktop/quickshell.nix
     ../../modules/home-manager/apps/obs.nix
     ../../modules/home-manager/core/screenshot.nix
     ../../modules/home-manager/apps/vesktop.nix
