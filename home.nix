@@ -29,5 +29,6 @@
     ./modules/apps/obs.nix
     ./modules/core/screenshot.nix
     ./modules/apps/vesktop.nix
+    ./modules/desktop/notification.nix
   ];
 }
