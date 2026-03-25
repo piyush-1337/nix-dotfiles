@@ -42,8 +42,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.blacklistedKernelModules = [ "spd5118" ];
   boot.kernelParams = [
-    "mem_sleep_default=deep"
-    "nvidia-drm.fbdev=0"
+    "nvidia.NVreg_EnableS0ixPowerManagement=1"
+    "mem_sleep_default=s2idle"
   ];
   networking.hostName = "piyushbtw"; # Define your hostname.
 

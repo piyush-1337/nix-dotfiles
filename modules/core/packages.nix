@@ -25,5 +25,6 @@
     waypaper
     ffmpeg
     # nvtopPackages.nvidia  # pulling massive cuda libs
+    rofi
   ];
 }
