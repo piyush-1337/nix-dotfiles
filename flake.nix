@@ -28,13 +28,13 @@
       nixosConfigurations.piyushbtw = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
+          ./hosts/piyushbtw/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.piyush = import ./home.nix;
+              users.piyush = import ./users/piyush/home.nix;
               backupFileExtension = "backup";
               extraSpecialArgs = { inherit inputs; };
             };

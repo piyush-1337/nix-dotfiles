@@ -6,6 +6,6 @@
   ];
 
   xdg.configFile."nvim" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/piyush/nixos-dotfiles/.config/nvim/";
+    source = config.lib.file.mkOutOfStoreSymlink "/home/piyush/nixos-dotfiles/users/piyush/.config/nvim/";
   };
 }

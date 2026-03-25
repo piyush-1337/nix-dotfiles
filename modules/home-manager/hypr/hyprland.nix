@@ -6,6 +6,6 @@
   ];
 
   xdg.configFile."hypr" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/piyush/nixos-dotfiles/.config/hypr/";
+    source = config.lib.file.mkOutOfStoreSymlink "/home/piyush/nixos-dotfiles/users/piyush/.config/hypr/";
   };
 }
