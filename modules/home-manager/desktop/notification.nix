@@ -7,15 +7,16 @@
     settings = {
       padding = "15";
       margin = "10";
-      borderSize = 2;
-      borderRadius = 8;
-      defaultTimeout = 5000; # Disappears after 5 seconds
-      layer = "overlay"; # Ensures it renders above fullscreen windows
+      border-size = 2;
+      border-radius = 8;
+      default-timeout = 5000;
+      layer = "overlay";
 
-      textColor = "#cdd6f4";
-      borderColor = "#89b4fa";
-      progressColor = "over #313244";
+      text-color = "#cdd6f4";
+      border-color = "#89b4fa";
+      progress-color = "over #313244";
     };
+
     extraConfig = ''
       [urgency=high]
       border-color=#f38ba8
