@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # Use the systemd-boot EFI boot loader.
@@ -9,4 +9,5 @@
     "nvidia.NVreg_EnableS0ixPowerManagement=1"
     "mem_sleep_default=s2idle"
   ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }
