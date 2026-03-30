@@ -25,4 +25,6 @@
     git
     proton-vpn-cli
   ];
+
+  programs.nix-ld.enable = true;
 }
