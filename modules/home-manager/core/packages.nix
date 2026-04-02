@@ -18,7 +18,7 @@
     fastfetch
     mpvpaper
     hyprpaper
-    swww
+    awww
     nerd-fonts.geist-mono
     btop
     matugen
@@ -28,5 +28,6 @@
     rofi
     libnotify
     signal-desktop
+    tree-sitter
   ];
 }
