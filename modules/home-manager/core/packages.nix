@@ -27,5 +27,6 @@
     # nvtopPackages.nvidia  # pulling massive cuda libs
     rofi
     libnotify
+    signal-desktop
   ];
 }
