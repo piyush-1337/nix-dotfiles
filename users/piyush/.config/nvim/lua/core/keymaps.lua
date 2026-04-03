@@ -130,8 +130,8 @@ vim.keymap.set('n', '<leader>co', ':diffget //2<CR>', { desc = 'Accept ours' })
 vim.keymap.set('n', '<leader>ct', ':diffget //3<CR>', { desc = 'Accept theirs' })
 vim.keymap.set('n', '<leader>re', ':RustLsp expandMacro<CR>', { desc = 'Expand Rust macro' })
 
-vim.keymap.set({ 'n', 'v' }, 'H', '_', { desc = 'Move cursor to start of line' })
-vim.keymap.set({ 'n', 'v' }, 'L', '$', { desc = 'Move cursor to end of line' })
+vim.keymap.set({ 'n', 'v', 'o' }, 'H', '_', { desc = 'Move cursor to start of line' })
+vim.keymap.set({ 'n', 'v', 'o' }, 'L', '$', { desc = 'Move cursor to end of line' })
 
 -- Visual mode: code actions for selection
 vim.keymap.set('v', '<space>ca', vim.lsp.buf.code_action, {

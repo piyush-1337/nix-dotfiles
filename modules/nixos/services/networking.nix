@@ -3,7 +3,7 @@
 {
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
-  networking.networkmanager.dns = "systemd-resolved";
+  # networking.networkmanager.dns = "systemd-resolved";
   networking.firewall.checkReversePath = false;
 
   services.avahi = {
@@ -16,5 +16,5 @@
     };
   };
 
-  services.resolved.enable = true;
+  # services.resolved.enable = true;
 }

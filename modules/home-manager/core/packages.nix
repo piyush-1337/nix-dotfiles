@@ -29,5 +29,6 @@
     libnotify
     signal-desktop
     tree-sitter
+    telegram-desktop
   ];
 }
