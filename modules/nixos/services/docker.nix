@@ -14,7 +14,7 @@
         "8.8.8.8"
       ];
       ipv6 = false;
-      data-root = "/some-place/to-store-the-docker-data";
+      data-root = "/home/piyush/docker-data/";
       userland-proxy = false;
     };
   };

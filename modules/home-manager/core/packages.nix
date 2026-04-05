@@ -30,5 +30,7 @@
     signal-desktop
     tree-sitter
     telegram-desktop
+    wl-clipboard
+    gh
   ];
 }
