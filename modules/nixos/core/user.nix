@@ -8,6 +8,7 @@
       "wheel"
       "networkmanager"
       "docker" # no need to sudo to run docker things
+      "dialout"
     ]; # Enable ‘sudo’ for the user.
   };
 
