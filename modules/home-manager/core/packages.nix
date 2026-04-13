@@ -32,5 +32,6 @@
     telegram-desktop
     wl-clipboard
     gh
+    mosh
   ];
 }

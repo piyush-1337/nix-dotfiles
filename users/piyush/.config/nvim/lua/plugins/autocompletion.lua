@@ -187,14 +187,24 @@ return { -- Autocompletion
         format = function(entry, vim_item)
           -- Kind icons
           vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
-          -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-          vim_item.menu = ({
+          
+          -- Get the custom alias for the completion source
+          local source_alias = ({
             nvim_lsp = '[LSP]',
             luasnip = '[Snippet]',
             buffer = '[Buffer]',
             path = '[Path]',
             codeium = '[Codeium]',
-          })[entry.source.name]
+          })[entry.source.name] or string.format('[%s]', entry.source.name)
+
+          -- Preserve the existing menu data (which holds the import path) 
+          -- and append your custom source alias.
+          if vim_item.menu and vim_item.menu ~= "" then
+            vim_item.menu = string.format("%s %s", vim_item.menu, source_alias)
+          else
+            vim_item.menu = source_alias
+          end
+
           return vim_item
         end,
       },
