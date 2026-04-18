@@ -33,5 +33,6 @@
     wl-clipboard
     gh
     mosh
+    mutagen
   ];
 }
