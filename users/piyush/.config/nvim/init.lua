@@ -70,6 +70,7 @@ require('lazy').setup({
   require 'plugins.lsp.rust',
   require 'plugins.lsp-signature',
   -- require 'plugins.cursor',
+  require 'plugins.gitdiff'
 }, {
   ui = {
     -- If you have a Nerd Font, set icons to an empty table which will use the
