@@ -16,7 +16,7 @@
     tmux
     nautilus
     fastfetch
-    mpvpaper
+    (mpvpaper.override { mpv = pkgs.mpv-unwrapped; })
     hyprpaper
     awww
     nerd-fonts.geist-mono
@@ -34,5 +34,6 @@
     gh
     mosh
     mutagen
+    poppler-utils
   ];
 }

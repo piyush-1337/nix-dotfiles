@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   services.batsignal = {
@@ -12,4 +12,5 @@
       "2"
     ];
   };
+  systemd.user.services.batsignal.Install.WantedBy = pkgs.lib.mkForce [ "default.target" ];
 }
