@@ -13,6 +13,7 @@
         # the tradeoff is increased power consumption. Defaults to
         # 'false'.
         FastConnectable = true;
+        MultiProfile = "multiple";
       };
       Policy = {
         # Enable all controllers when they are found. This includes

@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 
 {
   home.username = "piyush";

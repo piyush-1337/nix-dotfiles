@@ -35,5 +35,8 @@
     mosh
     mutagen
     poppler-utils
+    pulseaudio
+    bluetuith
+    mpv-unwrapped
   ];
 }
