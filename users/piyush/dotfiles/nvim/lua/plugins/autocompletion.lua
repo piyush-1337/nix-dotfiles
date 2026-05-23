@@ -60,7 +60,6 @@ return { -- Autocompletion
       Event = '',
       Operator = '󰆕',
       TypeParameter = '󰊄',
-      Codeium = '',
     }
 
     cmp.setup {
@@ -120,7 +119,6 @@ return { -- Autocompletion
         end, { 'i', 's' }),
       },
       sources = {
-        { name = 'codeium' },
         { name = 'nvim_lsp', priority = 100 },
         { name = 'luasnip' },
         { name = 'buffer' },
@@ -194,7 +192,6 @@ return { -- Autocompletion
             luasnip = '[Snippet]',
             buffer = '[Buffer]',
             path = '[Path]',
-            codeium = '[Codeium]',
           })[entry.source.name] or string.format('[%s]', entry.source.name)
 
           -- Preserve the existing menu data (which holds the import path) 

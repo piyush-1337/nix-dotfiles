@@ -5,9 +5,6 @@ require 'core.floaterminal' -- Floaterminal setup
 
 require('vim._core.ui2').enable()
 
-local catppuccin = require 'plugins.themes.catppuccin'
-local gruvbox = require 'plugins.themes.gruvbox'
-
 -- Install package manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -22,22 +19,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Import color theme based on environment variable NVIM_THEME
-local default_color_scheme = 'nord'
-local env_var_nvim_theme = os.getenv 'NVIM_THEME' or default_color_scheme
-
--- Define a table of theme modules
-local themes = {
-  nord = 'plugins.themes.nord',
-  onedark = 'plugins.themes.onedark',
-  catppuccin = 'plugins.themes.catppuccin',
-  gruvbox = 'plugins.themes.gruvbox',
-}
-
 -- Setup plugins
 require('lazy').setup({
-  require(themes['catppuccin']), -- error with setup script no dynamic themeing for now
-  -- require 'plugins.telescope',
+  require 'plugins.themes.catppuccin',
   require 'plugins.treesitter',
   require 'plugins.misc',
   require 'plugins.lsp.lsp',
@@ -45,34 +29,20 @@ require('lazy').setup({
   require 'plugins.none-ls',
   require 'plugins.lualine',
   require 'plugins.bufferline',
-  -- require 'plugins.neo-tree',
-  -- require 'plugins.alpha',
-  -- require 'plugins.indent-blankline',
-  -- require 'plugins.lazygit',
-  -- require 'plugins.comment',
   require 'plugins.debug',
   require 'plugins.gitsigns',
   require 'plugins.database',
-  -- require 'plugins.harpoon',
-  -- require 'plugins.avante',
-  -- require 'plugins.chatgpt',
   require 'plugins.aerial',
   require 'plugins.vim-tmux-navigator',
   require 'plugins.color-pallete',
   require 'plugins.colorizer',
-  -- require 'plugins.lsp.java',
-
-  -- require 'plugins.copilot',
   require 'plugins.lsp.flutter',
   require 'plugins.competitest',
-  -- require 'plugins.lsp-file-operations',
   require 'plugins.markdown',
   require 'plugins.snacks',
-  require 'plugins.sidekick',
   require 'plugins.lsp.rust',
   require 'plugins.lsp-signature',
-  -- require 'plugins.cursor',
-  require 'plugins.gitdiff'
+  require 'plugins.gitdiff',
 }, {
   ui = {
     -- If you have a Nerd Font, set icons to an empty table which will use the
