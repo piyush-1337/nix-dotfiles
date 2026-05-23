@@ -1,12 +1,1 @@
-return {
-    "dlyongemallo/diffview.nvim",
-    version = "*",
-    -- optional: lazy-load on command
-    -- cmd = {
-    --     "DiffviewOpen",
-    --     "DiffviewToggle",
-    --     "DiffviewFileHistory",
-    --     "DiffviewDiffFiles",
-    --     "DiffviewLog",
-    -- },
-}
+-- diffview.nvim does not need explicit setup for the current config.

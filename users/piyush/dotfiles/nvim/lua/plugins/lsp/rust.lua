@@ -1,5 +1,1 @@
-return {
-  'mrcjkb/rustaceanvim',
-  version = '^9', -- Recommended
-  lazy = false, -- This plugin is already lazy
-}
+-- rustaceanvim is configured through globals and filetype detection.
