@@ -3,6 +3,8 @@ require 'core.keymaps' -- Load general keymaps
 require 'core.snippets' -- Custom code snippets
 require 'core.floaterminal' -- Floaterminal setup
 
+require('vim._core.ui2').enable()
+
 local catppuccin = require 'plugins.themes.catppuccin'
 local gruvbox = require 'plugins.themes.gruvbox'
 

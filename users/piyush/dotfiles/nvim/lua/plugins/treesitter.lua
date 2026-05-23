@@ -13,7 +13,7 @@ return {
       'terraform', 'sql', 'dockerfile', 'toml', 'json', 'java', 'groovy',
       'go', 'gitignore', 'graphql', 'yaml', 'make', 'cmake', 'markdown',
       'markdown_inline', 'bash', 'tsx', 'css', 'html', 'rust', 'nix', 'systemverilog',
-      'cpp', 'dart'
+      'cpp', 'dart', 'objc', 
     }
     
     require('nvim-treesitter').install(parsers)
