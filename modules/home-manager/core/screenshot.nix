@@ -6,25 +6,25 @@ let
 
     [ -z "$AREA" ] && exit 0
 
-    ACTION=$(echo -e "Copy\nSave\nBoth" | ${pkgs.wofi}/bin/wofi --dmenu --prompt "Action:" --lines 3)
-
-    [ -z "$ACTION" ] && exit 0
-
-    GB_AREA="screen"
-    [ "$AREA" = "Selection" ] && GB_AREA="area"
-
-    GB_ACTION="copy"
-    [ "$ACTION" = "Save" ] && GB_ACTION="save"
-    [ "$ACTION" = "Both" ] && GB_ACTION="copysave"
-
+    # Wait a moment for wofi to close
     sleep 0.5
-    ${pkgs.grimblast}/bin/grimblast "$GB_ACTION" "$GB_AREA"
+
+    # Ensure Pictures directory exists
+    mkdir -p ~/Pictures
+
+    if [ "$AREA" = "Selection" ]; then
+      ${pkgs.grim}/bin/grim -t ppm -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.satty}/bin/satty --filename - --fullscreen --output-filename ~/Pictures/Screenshot-$(date '+%Y%m%d-%H%M%S').png
+    else
+      ${pkgs.grim}/bin/grim -t ppm - | ${pkgs.satty}/bin/satty --filename - --fullscreen --output-filename ~/Pictures/Screenshot-$(date '+%Y%m%d-%H%M%S').png
+    fi
   '';
 in
 {
   home.packages = with pkgs; [
     interactive-screenshot
-    grimblast
+    grim
+    slurp
+    satty
     wofi
   ];
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 let
   niriConfigDir = "/etc/nixos-dotfiles/users/push/dotfiles/niri";
