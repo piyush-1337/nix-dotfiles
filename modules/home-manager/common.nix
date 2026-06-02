@@ -18,5 +18,6 @@
     ./apps/vesktop.nix
     ./desktop/notification.nix
     ./core/battery.nix
+    ./apps/git.nix
   ];
 }
