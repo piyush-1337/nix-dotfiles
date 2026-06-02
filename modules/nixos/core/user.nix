@@ -11,9 +11,19 @@ in
     extraGroups = [
       "wheel"
       "networkmanager"
-      "docker" # no need to sudo to run docker things
+      "docker"
       "dialout"
-    ]; # Enable ‘sudo’ for the user.
+    ];
+  };
+
+  users.users.push = {
+    isNormalUser = true;
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "docker"
+      "dialout"
+    ];
   };
 
   environment.pathsToLink = [

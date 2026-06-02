@@ -85,8 +85,8 @@
     enable = true;
     shellAliases = {
       c = "clear";
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#piyushbtw -L";
-      nfu = "sudo nix flake update --flake ~/nixos-dotfiles/";
+      nrs = "sudo nixos-rebuild switch --flake /etc/nixos-dotfiles#piyushbtw -L";
+      nfu = "sudo nix flake update --flake /etc/nixos-dotfiles/";
     };
     functions = {
       mkcd = "mkdir -p $argv[1]; and cd $argv[1]";

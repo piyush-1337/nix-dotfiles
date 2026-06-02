@@ -133,6 +133,7 @@ do
         '--completion-style=detailed',
         '--function-arg-placeholders',
         '--malloc-trim',
+        "--query-driver=**",
       },
       filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
       root_markers = { 'compile_commands.json', '.git' },

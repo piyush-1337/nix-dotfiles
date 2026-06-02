@@ -1,5 +1,15 @@
-{ pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
+let
+  system = pkgs.stdenv.hostPlatform.system;
+  hyprlandPkg = inputs.hyprland.packages.${system}.hyprland;
+  
+  # This creates a guaranteed directory containing the .desktop files
+  waylandSessions = pkgs.symlinkJoin {
+    name = "wayland-sessions";
+    paths = [ hyprlandPkg config.programs.niri.package ];
+  };
+in
 {
   services.greetd = {
     enable = true;
@@ -10,7 +20,9 @@
           ${pkgs.tuigreet}/bin/tuigreet \
             --time \
             --remember \
-            --cmd start-hyprland
+            --remember-user-session \
+            --user-menu \
+            --sessions ${waylandSessions}/share/wayland-sessions
         '';
       };
     };

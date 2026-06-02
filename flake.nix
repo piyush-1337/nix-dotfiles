@@ -4,9 +4,11 @@
   nixConfig = {
     extra-substituters = [
       "https://hyprland.cachix.org"
+      "https://niri.cachix.org"
     ];
     extra-trusted-public-keys = [
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
     ];
   };
 
@@ -21,6 +23,10 @@
     };
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    niri = {
+      url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # quickshell = {
@@ -48,6 +54,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.piyush = import ./users/piyush/home.nix;
+              users.push = import ./users/push/home.nix;
               backupFileExtension = "backup";
               extraSpecialArgs = { inherit inputs; };
             };

@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 
 {
   imports = [
@@ -11,6 +11,9 @@
     ../../modules/nixos/services/docker.nix
     ../../modules/nixos/services/networking.nix
     ../../modules/nixos/services/display.nix
+    ../../modules/nixos/services/hyprland.nix
+    ../../modules/nixos/services/niri.nix
+    inputs.niri.nixosModules.niri
     ../../modules/nixos/services/security.nix
     ../../modules/nixos/core/boot.nix
     ../../modules/nixos/core/user.nix

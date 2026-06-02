@@ -3,7 +3,7 @@
 let
   system = pkgs.stdenv.hostPlatform.system;
   hyprPkgs = inputs.hyprland.packages.${system};
-  hyprConfigDir = "/home/piyush/nixos-dotfiles/users/piyush/dotfiles/hypr";
+  hyprConfigDir = "/etc/nixos-dotfiles/users/piyush/dotfiles/hypr";
 in
 {
   home.packages = [

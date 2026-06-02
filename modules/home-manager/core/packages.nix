@@ -38,5 +38,6 @@
     pulseaudio
     bluetuith
     mpv-unwrapped
+    go-mtpfs
   ];
 }
