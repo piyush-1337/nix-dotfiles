@@ -56,7 +56,7 @@ window-rule {
 
 window-rule { 
     match is-active=false
-    opacity 0.91
+    opacity 0.95
 }
 
 window-rule {
@@ -72,3 +72,5 @@ blur {
     passes 2
     offset 3
 }
+
+spawn-at-startup "waypaper" "--restore"

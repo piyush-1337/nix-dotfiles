@@ -16,13 +16,70 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  # VRAM patch
+  environment.etc."nvidia/nvidia-application-profiles-rc.d/50-niri-vram-fix.json".text = ''
+    {
+        "rules": [
+            {
+                "pattern": {
+                    "feature": "procname",
+                    "matches": "niri"
+                },
+                "profile": "Limit Free Buffer Pool On Wayland Compositors"
+            }
+        ],
+        "profiles": [
+            {
+                "name": "Limit Free Buffer Pool On Wayland Compositors",
+                "settings": [
+                    {
+                        "key": "GLVidHeapReuseRatio",
+                        "value": 0
+                    }
+                ]
+            }
+        ]
+    }
+  '';
+
+  # lock P0 in niri
+  environment.systemPackages = with pkgs; [
+    (writeShellScriptBin "nvidia-lock-clocks" ''
+      ${config.hardware.nvidia.package.bin}/bin/nvidia-smi -lmc 7001
+      ${config.hardware.nvidia.package.bin}/bin/nvidia-smi -lgc tdp,unlimited
+    '')
+    (writeShellScriptBin "nvidia-reset-clocks" ''
+      ${config.hardware.nvidia.package.bin}/bin/nvidia-smi -rmc
+      ${config.hardware.nvidia.package.bin}/bin/nvidia-smi -rgc
+    '')
+  ];
+
+  security.sudo.extraRules = [
+    {
+      users = [
+        "piyush"
+        "push"
+      ];
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/nvidia-lock-clocks";
+          options = [ "NOPASSWD" ];
+        }
+        {
+          command = "/run/current-system/sw/bin/nvidia-reset-clocks";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
+
   hardware.nvidia = {
     modesetting.enable = true;
     open = false;
     nvidiaSettings = true;
     powerManagement.enable = true;
     powerManagement.finegrained = false;
-
+    nvidiaPersistenced = true;
     # uncomment when switching to hybrid mode
     # prime = {
     #   offload.enable = true;

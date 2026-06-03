@@ -26,11 +26,18 @@ output "eDP-1" {
     hot-corners {
         top-left
     }
+    variable-refresh-rate on-demand=true
 }
 
 hotkey-overlay {
     skip-at-startup
 }
+
+debug {
+    disable-direct-scanout
+}
+
+spawn-at-startup "sudo" "nvidia-lock-clocks"
 
 prefer-no-csd
 
