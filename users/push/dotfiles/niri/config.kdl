@@ -7,6 +7,9 @@ input {
     touchpad {
         tap
         natural-scroll
+        scroll-factor 0.5
+        accel-speed 0.2
+        accel-profile "adaptive"
     }
     mouse {
     }
@@ -14,16 +17,19 @@ input {
     }
 }
 
-/-output "eDP-1" {
-    mode "1920x1080@144.030"
-    scale 2
+output "eDP-1" {
+    mode "1920x1080@144.001"
+    scale 1
     transform "normal"
     position x=1280 y=0
+
+    hot-corners {
+        top-left
+    }
 }
 
-spawn-at-startup "waybar"
-
 hotkey-overlay {
+    skip-at-startup
 }
 
 prefer-no-csd

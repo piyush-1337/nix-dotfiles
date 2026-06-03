@@ -2,6 +2,7 @@ layout {
     gaps 10
     background-color "transparent"
     center-focused-column "never"
+    always-center-single-column
     
     preset-column-widths {
         proportion 0.33333
@@ -39,8 +40,8 @@ layout {
 }
 
 cursor {
-    xcursor-theme "capitaine-cursors-light"
-    xcursor-size 24
+    xcursor-theme "breeze_cursors"
+    xcursor-size 12
     hide-when-typing
 }
 
@@ -56,4 +57,11 @@ window-rule {
 window-rule { 
     match is-active=false
     opacity 0.9
+}
+
+blur {
+    on
+    passes 3
+    offset 3
+    saturation 1.5
 }
