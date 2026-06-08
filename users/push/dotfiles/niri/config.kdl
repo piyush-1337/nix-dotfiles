@@ -33,10 +33,6 @@ hotkey-overlay {
     skip-at-startup
 }
 
-debug {
-    disable-direct-scanout
-}
-
 spawn-at-startup "sudo" "nvidia-lock-clocks"
 
 prefer-no-csd

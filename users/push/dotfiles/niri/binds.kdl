@@ -97,14 +97,14 @@ binds {
     // Mod+Shift+K     { focus-monitor-up; }
     // Mod+Shift+L     { focus-monitor-right; }
 
-    Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
-    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+    // Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
+    // Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
+    // Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
+    // Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
+    // Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
+    // Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
+    // Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
+    // Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
@@ -172,15 +172,24 @@ binds {
     //
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
-    Mod+1 { focus-workspace 1; }
-    Mod+2 { focus-workspace 2; }
-    Mod+3 { focus-workspace 3; }
-    Mod+4 { focus-workspace 4; }
-    Mod+5 { focus-workspace 5; }
-    Mod+6 { focus-workspace 6; }
-    Mod+7 { focus-workspace 7; }
-    Mod+8 { focus-workspace 8; }
-    Mod+9 { focus-workspace 9; }
+    Mod+Shift+1 { focus-workspace 1; }
+    Mod+Shift+2 { focus-workspace 2; }
+    Mod+Shift+3 { focus-workspace 3; }
+    Mod+Shift+4 { focus-workspace 4; }
+    Mod+Shift+5 { focus-workspace 5; }
+    Mod+Shift+6 { focus-workspace 6; }
+    Mod+Shift+7 { focus-workspace 7; }
+    Mod+Shift+8 { focus-workspace 8; }
+    Mod+Shift+9 { focus-workspace 9; }
+    Mod+1 { focus-column 1; }
+    Mod+2 { focus-column 2; }
+    Mod+3 { focus-column 3; }
+    Mod+4 { focus-column 4; }
+    Mod+5 { focus-column 5; }
+    Mod+6 { focus-column 6; }
+    Mod+7 { focus-column 7; }
+    Mod+8 { focus-column 8; }
+    Mod+9 { focus-column 9; }
     Mod+Ctrl+1 { move-column-to-workspace 1; }
     Mod+Ctrl+2 { move-column-to-workspace 2; }
     Mod+Ctrl+3 { move-column-to-workspace 3; }

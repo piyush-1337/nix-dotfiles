@@ -39,5 +39,7 @@
     bluetuith
     mpv-unwrapped
     go-mtpfs
+    man-pages
+    man-pages-posix
   ];
 }
