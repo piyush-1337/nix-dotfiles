@@ -4,8 +4,8 @@
   imports = [
     ./shell/bash.nix
     ./shell/fish.nix
+    ./shell/tmux.nix
     ./shell/starship.nix
-    ./terminal/kitty.nix
     ./editors/nvim.nix
     ./browser/firefox.nix
     ./core/packages.nix
@@ -19,5 +19,6 @@
     ./desktop/notification.nix
     ./core/battery.nix
     ./apps/git.nix
+    ./terminal/kitty.nix
   ];
 }

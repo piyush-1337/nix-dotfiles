@@ -7,6 +7,7 @@
 
   imports = [
     ../../modules/home-manager/common.nix
+    ../../modules/home-manager/terminal/kitty.nix
     ../../modules/home-manager/hypr/hyprland.nix
     ../../modules/home-manager/hypr/hypridle.nix
     ../../modules/home-manager/hypr/hyprlock.nix

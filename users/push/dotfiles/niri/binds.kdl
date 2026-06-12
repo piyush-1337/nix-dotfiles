@@ -18,10 +18,15 @@ binds {
     Alt+F { spawn "firefox"; }
     Mod+B { spawn "blueman-manager"; }
     Mod+E { spawn "nautilus"; }
-    Alt+T { spawn "kitty" "-e" "btop"; }
+    Alt+T { spawn "kitty" "btop"; }
     Alt+S { spawn "spotify"; }
     Alt+W { spawn "waypaper"; }
     Ctrl+Mod+Return { spawn "rofi" "-show" "drun" "-theme" "rounded-nord-dark" "-show-icons"; }
+    Ctrl+Alt+L { spawn "qylock-lock" "pixel-night-city"; }
+
+    Ctrl+Left { spawn "playerctl" "-p" "spotify,%any" "previous"; }
+    Ctrl+Right { spawn "playerctl" "-p" "spotify,%any" "next"; }
+    Ctrl+P { spawn "playerctl" "-p" "spotify,%any" "play-pause"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.

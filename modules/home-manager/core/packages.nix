@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -41,5 +41,6 @@
     go-mtpfs
     man-pages
     man-pages-posix
+    inputs.qylock.packages.${pkgs.stdenv.hostPlatform.system}.qylock-quickshell
   ];
 }
