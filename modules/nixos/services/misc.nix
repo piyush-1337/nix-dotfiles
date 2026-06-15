@@ -2,7 +2,7 @@
 
 {
   services.upower.enable = true;
-  services.udev.packages = with pkgs; [
-    android-udev-rules
-  ];
+
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
 }

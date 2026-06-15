@@ -5,7 +5,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      c = "clear";
+      c = "reset";
       nrs = "sudo nixos-rebuild switch --flake /etc/nixos-dotfiles#piyushbtw -L";
       nfu = "sudo nix flake update --flake /etc/nixos-dotfiles/";
     };

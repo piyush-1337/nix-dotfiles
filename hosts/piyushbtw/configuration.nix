@@ -15,6 +15,7 @@
     ../../modules/nixos/services/niri.nix
     inputs.niri.nixosModules.niri
     ../../modules/nixos/services/security.nix
+    ../../modules/nixos/services/misc.nix
     ../../modules/nixos/core/boot.nix
     ../../modules/nixos/core/user.nix
     ../../modules/nixos/core/system.nix

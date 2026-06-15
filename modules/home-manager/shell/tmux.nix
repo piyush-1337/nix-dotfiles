@@ -41,6 +41,17 @@
       unbind r
       bind r source-file ~/.config/tmux/tmux.conf
 
+      # Switch windows with Alt+Number
+      bind -n M-1 select-window -t 1
+      bind -n M-2 select-window -t 2
+      bind -n M-3 select-window -t 3
+      bind -n M-4 select-window -t 4
+      bind -n M-5 select-window -t 5
+      bind -n M-6 select-window -t 6
+      bind -n M-7 select-window -t 7
+      bind -n M-8 select-window -t 8
+      bind -n M-9 select-window -t 9
+
       # Split in CWD
       unbind %
       bind \\ split-window -h -c "#{pane_current_path}"
@@ -64,10 +75,14 @@
       # Hide status bar
       bind b set-option -g status
 
-      # Advanced Pane Management
-      bind J command-prompt -p "Join pane from window:" "join-pane -h -s '%%'"
-      bind B command-prompt -p "Break pane to window:" "break-pane -t '%%'"
-      bind M command-prompt -p "Move current window to:" "move-window -t '%%'"
+      # Swap windows left/right
+      bind -n M-S-Left swap-window -t -1 \; previous-window
+      bind -n M-S-Right swap-window -t +1 \; next-window
+      
+      # Join a marked pane to current window
+      bind M select-pane -m   # mark
+      bind J join-pane -h     # join marked
+      bind B join-pane -v
       bind H select-layout even-horizontal
       bind V select-layout even-vertical
 
