@@ -45,6 +45,7 @@ do
 
   -- Your LSP server settings
   local servers = {
+    neocmake = {},
     nixd = {
       settings = {
         nixd = {
@@ -134,6 +135,7 @@ do
         '--function-arg-placeholders',
         '--malloc-trim',
         "--query-driver=**",
+        "--experimental-modules-support",
       },
       filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
       root_markers = { 'compile_commands.json', '.git' },

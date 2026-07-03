@@ -24,6 +24,8 @@ function M.setup()
 
   vim.pack.add({
     { src = gh 'catppuccin/nvim', name = 'catppuccin' },
+    { src = gh 'rebelot/kanagawa.nvim', name = 'kanagawa' },
+    { src = gh 'scottmckendry/cyberdream.nvim', name = 'cyberdream' },
     gh 'folke/snacks.nvim',
 
     gh 'nvim-lua/plenary.nvim',

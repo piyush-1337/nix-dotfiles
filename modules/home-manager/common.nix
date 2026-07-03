@@ -1,6 +1,8 @@
 { ... }:
 
 {
+  programs.man.generateCaches = false;
+
   imports = [
     ./shell/bash.nix
     ./shell/fish.nix

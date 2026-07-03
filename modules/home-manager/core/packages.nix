@@ -19,7 +19,7 @@
     (mpvpaper.override { mpv = pkgs.mpv-unwrapped; })
     hyprpaper
     awww
-    nerd-fonts.geist-mono
+    nerd-fonts.iosevka
     btop
     matugen
     waypaper
@@ -42,5 +42,7 @@
     man-pages
     man-pages-posix
     inputs.qylock.packages.${pkgs.stdenv.hostPlatform.system}.qylock-quickshell
+    aria2
+    android-tools
   ];
 }

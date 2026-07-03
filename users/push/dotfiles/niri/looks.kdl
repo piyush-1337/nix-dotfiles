@@ -68,11 +68,9 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^kitty$"
+    match app-id="^com.gabm.satty$"
 
-    background-effect {
-        blur true
-    }
+    open-floating true
 }
 
 window-rule {

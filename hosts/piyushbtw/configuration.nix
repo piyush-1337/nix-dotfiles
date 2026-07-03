@@ -1,6 +1,7 @@
 { inputs, ... }:
 
 {
+
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -20,6 +21,8 @@
     ../../modules/nixos/core/user.nix
     ../../modules/nixos/core/system.nix
   ];
+
+  documentation.man.cache.enable = false;
 
   networking.hostName = "piyushbtw"; # Define your hostname.
 
