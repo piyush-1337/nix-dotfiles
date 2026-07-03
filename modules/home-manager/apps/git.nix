@@ -30,6 +30,7 @@
       ui = {
         editor = "nvim";
         merge-editor = "nvim";
+        default-command = "log";
       };
     };
   };
