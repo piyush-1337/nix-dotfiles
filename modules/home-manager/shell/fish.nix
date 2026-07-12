@@ -26,8 +26,8 @@
 
       if status is-interactive
         and not set -q TMUX
-        # Creates a new session and replaces the fish process with it
-        exec ${pkgs.tmux}/bin/tmux new-session
+        # Attach to default session, or create if missing
+        exec ${pkgs.tmux}/bin/tmux new-session -A -s default
       end
     '';
   };

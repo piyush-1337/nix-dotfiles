@@ -14,6 +14,7 @@
     nixfmt
     tree
     tmux
+    tmuxinator
     nautilus
     fastfetch
     (mpvpaper.override { mpv = pkgs.mpv-unwrapped; })

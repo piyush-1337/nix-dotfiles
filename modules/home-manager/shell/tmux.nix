@@ -51,6 +51,9 @@
       bind -n M-7 select-window -t 7
       bind -n M-8 select-window -t 8
       bind -n M-9 select-window -t 9
+      
+      # Tmuxinator popup
+      bind-key -n C-f display-popup -E "bash -c '${pkgs.tmuxinator}/bin/tmuxinator list | tail -n +2 | xargs -n1 | ${pkgs.fzf}/bin/fzf --reverse --header \"Select Project\" | xargs -r ${pkgs.tmuxinator}/bin/tmuxinator start'"
 
       # Split in CWD
       unbind %
