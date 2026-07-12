@@ -100,7 +100,7 @@
 
       set -g status-left-length 200
       set -g status-right-length 200
-      set -g status-left "#[fg=''${session_fg},bold,bg=''${bg}] #S #[fg=''${default_fg},nobold,bg=''${bg}] | "
+      set -g status-left "#[fg=''${session_fg},bold,bg=''${bg}]  #S #[fg=''${default_fg},nobold,bg=''${bg}] | "
       set -g status-right " #{cpu_percentage}   #{ram_percentage} "
       set -g status-justify centre
       set -g status-style "bg=''${bg}"
