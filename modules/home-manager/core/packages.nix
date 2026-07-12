@@ -2,49 +2,49 @@
 
 {
   home.packages = with pkgs; [
-    bat
-    ripgrep
-    nodejs
-    gcc
-    brightnessctl
-    playerctl
-    wireplumber
-    unzip
-    nixd
-    nixfmt
-    tree
-    tmux
-    tmuxinator
-    nautilus
-    fastfetch
     (mpvpaper.override { mpv = pkgs.mpv-unwrapped; })
-    hyprpaper
+    android-tools
+    aria2
     awww
-    nerd-fonts.iosevka
-    btop
-    matugen
-    waypaper
-    ffmpeg
-    # nvtopPackages.nvidia  # pulling massive cuda libs
-    rofi
-    libnotify
-    signal-desktop
-    tree-sitter
-    telegram-desktop
-    wl-clipboard
-    gh
-    mosh
-    mutagen
-    poppler-utils
-    pulseaudio
+    bat
     bluetuith
-    mpv-unwrapped
+    brightnessctl
+    btop
+    fastfetch
+    ffmpeg
+    fzf
+    gcc
+    gh
     go-mtpfs
+    hyprpaper
+    inputs.qylock.packages.${pkgs.stdenv.hostPlatform.system}.qylock-quickshell
+    libnotify
     man-pages
     man-pages-posix
-    inputs.qylock.packages.${pkgs.stdenv.hostPlatform.system}.qylock-quickshell
-    aria2
-    android-tools
-    fzf
+    matugen
+    mosh
+    mpv-unwrapped
+    mutagen
+    nautilus
+    nerd-fonts.iosevka
+    nixd
+    nixfmt
+    nodejs
+    # nvtopPackages.nvidia  # pulling massive cuda libs
+    playerctl
+    poppler-utils
+    pulseaudio
+    ripgrep
+    rofi
+    signal-desktop
+    telegram-desktop
+    tmux
+    tmuxinator
+    tree
+    tree-sitter
+    unzip
+    waypaper
+    wireplumber
+    wl-clipboard
   ];
 }
