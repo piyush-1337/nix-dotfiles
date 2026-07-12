@@ -44,5 +44,6 @@
     inputs.qylock.packages.${pkgs.stdenv.hostPlatform.system}.qylock-quickshell
     aria2
     android-tools
+    fzf
   ];
 }
