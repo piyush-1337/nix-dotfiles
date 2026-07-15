@@ -56,9 +56,9 @@ do
       },
       -- separator_selected = {},
       -- tab_selected = {},
-      -- background = {},
+      background = { bg = 'NONE' },
       -- indicator_selected = {},
-      -- fill = {},
+      fill = { bg = 'NONE' },
     },
   }
 

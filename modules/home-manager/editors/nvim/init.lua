@@ -6,9 +6,10 @@ require 'core.floaterminal' -- Floaterminal setup
 require('vim._core.ui2').enable()
 require('core.packages').setup()
 
-require 'plugins.themes.catppuccin'
+-- require 'plugins.themes.catppuccin'
 -- require 'plugins.themes.kanagawa'
 -- require 'plugins.themes.cyberdream'
+require 'plugins.themes.zenbones'
 require 'plugins.treesitter'
 require 'plugins.misc'
 require 'plugins.lsp.lsp'

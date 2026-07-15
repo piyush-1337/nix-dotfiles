@@ -20,7 +20,7 @@ do
     normal = {
       a = { fg = colors.bg, bg = colors.green, gui = 'bold' },
       b = { fg = colors.fg, bg = colors.gray3 },
-      c = { fg = colors.fg, bg = colors.gray2 },
+      c = { fg = colors.fg, bg = 'NONE' },
     },
     command = { a = { fg = colors.bg, bg = colors.yellow, gui = 'bold' } },
     insert = { a = { fg = colors.bg, bg = colors.blue, gui = 'bold' } },
@@ -28,9 +28,9 @@ do
     terminal = { a = { fg = colors.bg, bg = colors.cyan, gui = 'bold' } },
     replace = { a = { fg = colors.bg, bg = colors.red1, gui = 'bold' } },
     inactive = {
-      a = { fg = colors.gray1, bg = colors.bg, gui = 'bold' },
-      b = { fg = colors.gray1, bg = colors.bg },
-      c = { fg = colors.gray1, bg = colors.gray2 },
+      a = { fg = colors.gray1, bg = 'NONE', gui = 'bold' },
+      b = { fg = colors.gray1, bg = 'NONE' },
+      c = { fg = colors.gray1, bg = 'NONE' },
     },
   }
 
@@ -79,10 +79,18 @@ do
     cond = hide_in_width,
   }
 
+  local custom_theme = require('lualine.themes.auto')
+  
+  for _, mode in pairs(custom_theme) do
+    if mode.c then
+      mode.c.bg = 'NONE'
+    end
+  end
+
   require('lualine').setup {
     options = {
       icons_enabled = true,
-      theme = themes[onedark_theme], -- Set theme based on environment variable
+      theme = custom_theme,
       -- Some useful glyphs:
       -- https://www.nerdfonts.com/cheat-sheet
       --        

@@ -26,6 +26,8 @@ function M.setup()
     { src = gh 'catppuccin/nvim', name = 'catppuccin' },
     { src = gh 'rebelot/kanagawa.nvim', name = 'kanagawa' },
     { src = gh 'scottmckendry/cyberdream.nvim', name = 'cyberdream' },
+    { src = gh 'rktjmp/lush.nvim', name = 'lush' },
+    { src = gh 'zenbones-theme/zenbones.nvim', name = 'zenbones' },
     gh 'folke/snacks.nvim',
 
     gh 'nvim-lua/plenary.nvim',
