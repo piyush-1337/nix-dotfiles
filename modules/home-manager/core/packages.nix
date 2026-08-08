@@ -46,5 +46,9 @@
     waypaper
     wireplumber
     wl-clipboard
+    tdf
+    perf
+    # for some reason the niri flake isn't setting up xwayland unless xwayland-satellite is in PATH
+    inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable
   ];
 }

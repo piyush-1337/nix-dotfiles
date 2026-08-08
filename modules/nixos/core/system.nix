@@ -6,6 +6,7 @@
     "flakes"
   ];
   nix.settings.auto-optimise-store = true;
+  nix.settings.narinfo-cache-negative-ttl = 31536000;
   nix.settings.substituters = [
     "https://cache.nixos.org"
     "https://hyprland.cachix.org"

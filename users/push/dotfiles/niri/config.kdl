@@ -23,9 +23,9 @@ output "eDP-1" {
     transform "normal"
     position x=1280 y=0
 
-    hot-corners {
-        top-left
-    }
+    // hot-corners {
+    //     top-left
+    // }
     variable-refresh-rate on-demand=true
 }
 

@@ -1,6 +1,24 @@
 require('competitest').setup {
   testcases_use_single_file = false,
   testcases_directory = '.test',
+
+  compile_command = {
+    cpp = { 
+      exec = 'g++', 
+      args = {
+        '-std=c++23',
+        '-O2',
+        '-Wall',
+        '-Wextra',
+        '-Wconversion',
+        '-DLOCAL',
+        '$(FNAME)',
+        '-o',
+        '$(FNOEXT)'
+      } 
+    },
+  },
+  
 }
 
 vim.api.nvim_set_keymap('n', '<leader>ta', ':CompetiTest add_testcase<CR>', { noremap = true, silent = true, desc = 'Add Testcase' })

@@ -9,11 +9,12 @@
     # System-level modules
     ../../modules/nixos/hardware/nvidia.nix
     ../../modules/nixos/hardware/bluetooth.nix
-    ../../modules/nixos/services/docker.nix
+    ../../modules/nixos/services/virt.nix
     ../../modules/nixos/services/networking.nix
     ../../modules/nixos/services/display.nix
     ../../modules/nixos/services/hyprland.nix
     ../../modules/nixos/services/niri.nix
+    ../../modules/nixos/services/audio.nix
     inputs.niri.nixosModules.niri
     ../../modules/nixos/services/security.nix
     ../../modules/nixos/services/misc.nix

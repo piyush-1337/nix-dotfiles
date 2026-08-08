@@ -13,6 +13,7 @@ in
       "networkmanager"
       "docker"
       "dialout"
+      "vmware"
     ];
   };
 
@@ -23,6 +24,7 @@ in
       "networkmanager"
       "docker"
       "dialout"
+      "vmware"
     ];
   };
 

@@ -29,9 +29,31 @@
 
       ui = {
         editor = "nvim";
-        merge-editor = "nvim";
+        # merge-editor = "nvim";
         default-command = "log";
       };
+
+      # merge-tools = {
+      #   nvim = {
+      #     program = "nvim";
+      #     merge-args = [
+      #       "-f"
+      #       "-d"
+      #       "$output"
+      #       "-M"
+      #       "$left"
+      #       "$base"
+      #       "$right"
+      #       "-c"
+      #       "wincmd J"
+      #       "-c"
+      #       "set modifiable"
+      #       "-c"
+      #       "set write"
+      #     ];
+      #     merge-tool-edits-conflict-markers = true;
+      #   };
+      # };
     };
   };
 }

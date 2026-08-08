@@ -19,6 +19,8 @@
     };
   };
 
+  virtualisation.vmware.host.enable = true;
+
   networking.firewall.trustedInterfaces = [ "docker0" ];
   networking.firewall.allowedUDPPorts = [ 53 ];
 }

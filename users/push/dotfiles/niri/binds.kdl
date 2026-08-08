@@ -21,7 +21,7 @@ binds {
     Alt+T { spawn "kitty" "btop"; }
     Alt+S { spawn "spotify"; }
     Alt+W { spawn "waypaper"; }
-    Ctrl+Mod+Return { spawn "rofi" "-show" "drun" "-theme" "rounded-nord-dark" "-show-icons"; }
+    Ctrl+Mod+Return { spawn "rofi" "-show" "drun" "-theme" "rounded-nord-dark" "-show-icons" "-display-drun" "Search Apps:"; }
     Ctrl+Alt+L { spawn "qylock-lock" "pixel-night-city"; }
 
     Ctrl+Left { spawn "playerctl" "-p" "spotify,%any" "previous"; }
