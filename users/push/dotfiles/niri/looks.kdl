@@ -60,7 +60,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^.blueman-manager-wrapped$"
+    match app-id="^blueman-manager$"
 
     open-floating true
     default-column-width { proportion 0.75; }
