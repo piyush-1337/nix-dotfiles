@@ -25,6 +25,7 @@ in
       "docker"
       "dialout"
       "vmware"
+      "wireshark"
     ];
   };
 

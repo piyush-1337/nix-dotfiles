@@ -176,6 +176,13 @@ do
         },
       },
     },
+    kotlin_language_server = {
+      filetypes = { 'kotlin', 'kts' },
+      root_markers = { 'settings.gradle.kts', 'build.gradle.kts', 'pom.xml', '.git' },
+      init_options = {
+        storagePath = vim.fn.stdpath('data') .. '/kls_storage',
+      },
+    },
   }
 
   for server, cfg in pairs(servers) do

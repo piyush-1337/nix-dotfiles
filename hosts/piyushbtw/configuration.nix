@@ -7,20 +7,21 @@
     ./hardware-configuration.nix
 
     # System-level modules
-    ../../modules/nixos/hardware/nvidia.nix
+    ../../modules/nixos/core/boot.nix
+    ../../modules/nixos/core/programs.nix
+    ../../modules/nixos/core/system.nix
+    ../../modules/nixos/core/user.nix
     ../../modules/nixos/hardware/bluetooth.nix
-    ../../modules/nixos/services/virt.nix
-    ../../modules/nixos/services/networking.nix
+    ../../modules/nixos/hardware/nvidia.nix
+    ../../modules/nixos/services/audio.nix
     ../../modules/nixos/services/display.nix
     ../../modules/nixos/services/hyprland.nix
-    ../../modules/nixos/services/niri.nix
-    ../../modules/nixos/services/audio.nix
-    inputs.niri.nixosModules.niri
-    ../../modules/nixos/services/security.nix
     ../../modules/nixos/services/misc.nix
-    ../../modules/nixos/core/boot.nix
-    ../../modules/nixos/core/user.nix
-    ../../modules/nixos/core/system.nix
+    ../../modules/nixos/services/networking.nix
+    ../../modules/nixos/services/niri.nix
+    ../../modules/nixos/services/security.nix
+    ../../modules/nixos/services/virt.nix
+    inputs.niri.nixosModules.niri
   ];
 
   documentation.man.cache.enable = false;
