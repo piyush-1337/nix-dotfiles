@@ -51,7 +51,7 @@ do
       -- Start syntax highlighting
       pcall(vim.treesitter.start, args.buf)
       -- Set experimental indentation
-      vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      -- vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
     end,
   })
 
