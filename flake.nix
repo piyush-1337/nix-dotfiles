@@ -27,7 +27,6 @@
     };
     niri = {
       url = "github:epireyn/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     # quickshell = {
     #   url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";

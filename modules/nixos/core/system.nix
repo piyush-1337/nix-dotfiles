@@ -15,6 +15,9 @@
     "cache.nixos.org-1:6NCHdD59X431o0gWypbQ+2o0p3iKl6L8+IYbtr7G0bM="
     "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
   ];
+
+  nix.settings.trusted-users = [ "root" "@wheel" ];
+
   nixpkgs.config.allowUnfree = true;
 
   nix.gc = {

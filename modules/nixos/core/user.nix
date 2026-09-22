@@ -26,6 +26,7 @@ in
       "dialout"
       "vmware"
       "wireshark"
+      "video"
     ];
   };
 
