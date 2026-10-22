@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    # nvtopPackages.nvidia  # pulling massive cuda libs
     (mpvpaper.override { mpv = pkgs.mpv-unwrapped; })
     android-tools
     aria2
@@ -26,17 +27,19 @@
     mpv-unwrapped
     mutagen
     nautilus
+    ncdu
     nerd-fonts.iosevka
     nixd
     nixfmt
     nodejs
-    # nvtopPackages.nvidia  # pulling massive cuda libs
+    perf
     playerctl
     poppler-utils
     pulseaudio
     ripgrep
     rofi
     signal-desktop
+    tdf
     telegram-desktop
     tmux
     tmuxinator
@@ -46,7 +49,5 @@
     waypaper
     wireplumber
     wl-clipboard
-    tdf
-    perf
   ];
 }
