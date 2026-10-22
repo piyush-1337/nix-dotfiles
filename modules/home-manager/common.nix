@@ -22,5 +22,6 @@
     ./core/battery.nix
     ./apps/git.nix
     ./terminal/kitty.nix
+    ./editors/emacs.nix
   ];
 }
