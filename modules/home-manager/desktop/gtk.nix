@@ -2,26 +2,36 @@
 
 let
   nautilusTransparentCss = ''
-    window {
-      background-color: rgba(0,0,10,.25) !important;
-      border-radius: 12px !important;
-      background-size: cover !important;
-      background-repeat: no-repeat !important;
+    .nautilus-window {
+      background-color: rgba(0,0,10,.25);
+      border-radius: 12px;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
-    box, revealer, widget, statuspage, placessidebar, scrolledwindow, stack, firstcell, columnview {
-      background-color: rgba(0,0,0,0) !important;
-    }
-    textview {
-      background-color: rgba(0,0,0,0.35) !important;
+    .nautilus-window box,
+    .nautilus-window revealer,
+    .nautilus-window widget,
+    .nautilus-window statuspage,
+    .nautilus-window placessidebar,
+    .nautilus-window scrolledwindow,
+    .nautilus-window stack,
+    .nautilus-window firstcell,
+    .nautilus-window columnview {
+      background-color: rgba(0,0,0,0);
     }
 
-    widget.sidebar-pane {
-      background-color: rgba(0,0,0,0.35) !important;
+    .nautilus-window textview {
+      background-color: rgba(0,0,0,0.35);
     }
 
-    window, window * {
-      color: #ffffff !important;
+    .nautilus-window widget.sidebar-pane {
+      background-color: rgba(0,0,0,0.35);
+    }
+
+    .nautilus-window,
+    .nautilus-window * {
+      color: #ffffff;
     }
   '';
 in
@@ -49,9 +59,6 @@ in
       extraCss = nautilusTransparentCss;
     };
     gtk4 = {
-      extraConfig = {
-        gtk-application-prefer-dark-theme = 1;
-      };
       extraCss = nautilusTransparentCss;
       theme = null;
     };
