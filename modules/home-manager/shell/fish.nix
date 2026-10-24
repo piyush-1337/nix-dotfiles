@@ -26,6 +26,7 @@
 
       if status is-interactive
         and not set -q TMUX
+        and not set -q INSIDE_EMACS
         # Attach to default session, or create if missing
         exec ${pkgs.tmux}/bin/tmux new-session -A -s default
       end
