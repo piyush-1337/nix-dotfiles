@@ -10,6 +10,7 @@
     enable = true;
     package = pkgs.emacs-pgtk;
     defaultEditor = true;
+    startWithUserSession = "graphical";                                                                                                                          
   };
 
   xdg.configFile."emacs" = {

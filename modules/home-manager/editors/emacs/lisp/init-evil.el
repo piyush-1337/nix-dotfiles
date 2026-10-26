@@ -13,6 +13,13 @@
   (define-key evil-motion-state-map (kbd "H") #'evil-first-non-blank)
   (define-key evil-motion-state-map (kbd "L") #'evil-end-of-line)
 
+  (evil-define-key 'normal 'global "gcc" #'comment-line)
+  (evil-define-key 'visual 'global "gc"
+    (lambda ()
+      (interactive)
+      (call-interactively #'comment-line)
+      (evil-normal-state)))
+
   (define-key evil-normal-state-map (kbd "C-s") #'save-buffer)
   (define-key evil-insert-state-map (kbd "C-s") #'save-buffer)
   (define-key evil-visual-state-map (kbd "C-s") #'save-buffer)

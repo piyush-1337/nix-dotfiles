@@ -1,13 +1,17 @@
 ;;; init-git.el -*- lexical-binding: t; -*-
 
 (use-package diff-hl
+  :custom
+  (diff-hl-flydiff-delay 0.1)
+  (diff-hl-update-async t)
   :init
   (global-diff-hl-mode 1)
   (diff-hl-flydiff-mode 1)
 
   :hook
   ((dired-mode . diff-hl-dired-mode)
-   (magit-post-refresh . diff-hl-magit-post-refresh))
+   (magit-post-refresh . diff-hl-magit-post-refresh)
+   (evil-insert-state-exit . diff-hl-flydiff-update))
 
   :config
   (evil-define-key '(normal visual motion) 'global
