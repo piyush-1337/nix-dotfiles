@@ -140,4 +140,7 @@
   "[d"                 #'flymake-goto-prev-error
   "]d"                 #'flymake-goto-next-error)
 
+(setq eglot-ignored-server-capabilities '(:documentOnTypeFormattingProvider))
+
+
 (provide 'init-dev)

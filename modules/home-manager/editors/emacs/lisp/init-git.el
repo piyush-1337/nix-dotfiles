@@ -23,8 +23,7 @@
 
 (use-package magit
   :commands (magit-status magit-diff-working-tree)
-  :config
-  (evil-collection-magit-init)
+  :init
   (evil-define-key '(normal visual motion) 'global
     (kbd "<leader> g d") #'magit-diff-working-tree
     (kbd "<leader> g g") #'magit-status))

@@ -8,7 +8,7 @@
   (corfu-auto-prefix 2)
   (corfu-quit-at-boundary 'separator)
   (corfu-quit-no-match 'separator)
-  (corfu-preselect 'prompt)
+  ;; (corfu-preselect 'prompt)
   :bind (:map corfu-map
 	      ("C-j" . corfu-next)
 	      ("C-k" . corfu-previous)
