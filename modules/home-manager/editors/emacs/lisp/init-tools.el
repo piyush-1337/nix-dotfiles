@@ -1,27 +1,20 @@
 ;;; init-tools.el -*- lexical-binding: t; -*-
 
-(setq explicit-shell-file-name (executable-find "fish"))
+(defun my/project-vterm ()
+  "Open or switch to a vterm buffer in the current project root."
+  (interactive)
+  (let* ((proj (project-current))
+	 (default-directory (if proj (project-root proj) default-directory))
+	 (buf-name (if proj (format "*vterm: %s*" (file-name-nondirectory  (directory-file-name default-directory))) "*vterm*")))
+    (vterm buf-name)))
 
-(use-package eat
+(use-package vterm
   :demand t
-  :custom
-  (eat-kill-buffer-on-exit t)
-  (eat-enable-yank-to-terminal t)
-  (eat-enable-shell-prompt-annotation nil)
-  (eat-enable-shell-command-history nil)
-
-  :hook
-  (eat-mode . buffer-disable-undo)
-
   :config
-  (keymap-set eat-semi-char-mode-map "C-h" #'evil-window-left)
-  (keymap-set eat-semi-char-mode-map "C-j" #'evil-window-down)
-  (keymap-set eat-semi-char-mode-map "C-k" #'evil-window-up)
-  (keymap-set eat-semi-char-mode-map "C-l" #'evil-window-right)
-
+  (setq vterm-shell (executable-find "fish"))
   (evil-define-key '(normal visual motion) 'global
-    (kbd "<leader> t t") #'eat
-    (kbd "<leader> p t") #'eat-project))
+    (kbd "<leader> t t") #'vterm
+    (kbd "<leader> p t") #'my/project-vterm))
 
 
 (define-key evil-motion-state-map (kbd "C-h") #'evil-window-left)

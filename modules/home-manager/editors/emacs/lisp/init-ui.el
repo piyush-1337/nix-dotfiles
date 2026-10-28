@@ -8,6 +8,9 @@
 (set-face-attribute 'default nil :family "Iosevka Nerd Font Mono" :height 160)
 (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font Mono-16"))
 
+(set-frame-parameter nil 'alpha-background 65)
+(add-to-list 'default-frame-alist '(alpha-background . 65))
+
 (use-package nerd-icons)
 
 (setq modus-themes-common-palette-overrides
@@ -15,6 +18,11 @@
         (border-mode-line-active bg-dim)
         (bg-mode-line-inactive bg-main)
         (border-mode-line-inactive bg-main)))
+
+;; (use-package dracula-theme
+;;   :config
+;;   (load-theme 'dracula t))
+
 
 (load-theme 'modus-vivendi t)
 

@@ -47,6 +47,7 @@
   :init
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.15)
+  (setq-default evil-escape-excluded-states '(visual))
   (setq evil-escape-excluded-major-modes '(eat-mode
                                           term-mode
                                           vterm-mode

@@ -30,7 +30,8 @@
   :config
   (setq eglot-events-buffer-config '(:size 0)
         jit-lock-context-time 0.1)
-  (add-to-list 'eglot-server-programs '(nix-mode . ("nixd"))))
+  (add-to-list 'eglot-server-programs '(nix-mode . ("nixd")))
+  (add-to-list 'eglot-server-programs '((c-mode c-ts-mode c++-mode c++-ts-mode) . ("clangd" "--experimental-modules-support"))))
 
 (with-eval-after-load 'cape
   (advice-add #'eglot-completion-at-point :around #'cape-wrap-buster)
@@ -116,10 +117,14 @@
     (kbd "<leader> m h") #'markdown-toggle-markup-hiding
     (kbd "<leader> m i") #'markdown-toggle-inline-images))
 
+(add-to-list 'major-mode-remap-alist '(c-mode . c-ts-mode))
+(add-to-list 'major-mode-remap-alist '(c++-mode . c++-ts-mode))
+(add-to-list 'major-mode-remap-alist '(c-or-c++-mode . c-or-c++-ts-mode))
+
 (dolist (hook '(c-mode-hook c++-mode-hook c-ts-mode-hook c++-ts-mode-hook))
   (add-hook hook #'eglot-ensure))
 
-(add-to-list 'auto-mode-alist '("\\.\\(cppm\\|cxxm\\|ixx\\)\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.\\(cppm\\|cxxm\\|ixx\\)\\'" . c++-ts-mode))
 
 (defun my/eglot-code-actions-always-prompt ()
   "Show the code actions menu even if there is only one candidate."

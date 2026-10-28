@@ -4,11 +4,15 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-pgtk;
+    extraPackages = epkgs: [
+      epkgs.treesit-grammars.with-all-grammars
+      epkgs.vterm
+    ];
   };
 
   services.emacs = {
     enable = true;
-    package = pkgs.emacs-pgtk;
+    package = config.programs.emacs.finalPackage;
     defaultEditor = true;
     startWithUserSession = "graphical";                                                                                                                          
   };
