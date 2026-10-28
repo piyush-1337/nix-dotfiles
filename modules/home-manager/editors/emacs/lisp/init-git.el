@@ -24,8 +24,8 @@
 (use-package magit
   :commands (magit-status magit-diff-working-tree)
   :custom
-  (magit-section-invisible-alist '((file . hide)
-				   (stashes . hide)))
+  (magit-section-initial-visibility-alist '((file . hide)
+					    (stashes . hide)))
   :init
   (evil-define-key '(normal visual motion) 'global
     (kbd "<leader> g d") #'magit-diff-working-tree

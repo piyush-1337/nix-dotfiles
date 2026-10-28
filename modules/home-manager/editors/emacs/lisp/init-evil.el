@@ -49,9 +49,9 @@
   (setq-default evil-escape-delay 0.15)
   (setq-default evil-escape-excluded-states '(visual))
   (setq evil-escape-excluded-major-modes '(eat-mode
-                                          term-mode
-                                          vterm-mode
-                                          eshell-mode))
+                                           term-mode
+                                           vterm-mode
+                                           eshell-mode))
   :config
   (add-hook 'evil-escape-inhibit-functions #'evil-escape--is-magit-buffer)
   (evil-escape-mode 1))
