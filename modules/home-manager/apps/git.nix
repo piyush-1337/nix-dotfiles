@@ -28,7 +28,7 @@
       };
 
       ui = {
-        editor = "nvim";
+        # editor = "nvim";
         # merge-editor = "nvim";
         default-command = "st";
       };

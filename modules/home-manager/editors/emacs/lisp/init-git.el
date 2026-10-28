@@ -10,7 +10,7 @@
 
   :hook
   ((dired-mode . diff-hl-dired-mode)
-   (magit-post-refresh . diff-hl-magit-post-refresh)
+   (majutsu-refresh-buffer-hook . diff-hl-update)
    (evil-insert-state-exit . diff-hl-flydiff-update))
 
   :config
@@ -18,17 +18,41 @@
     "]c"                 #'diff-hl-next-hunk
     "[c"                 #'diff-hl-previous-hunk
     (kbd "<leader> g p") #'diff-hl-show-hunk
-    (kbd "<leader> g r") #'diff-hl-revert-hunk
-    (kbd "<leader> g s") #'diff-hl-stage-current-hunk))
+    (kbd "<leader> g R") #'diff-hl-revert-hunk))
 
-(use-package magit
-  :commands (magit-status magit-diff-working-tree)
+(use-package majutsu
+  :vc (:url "https://github.com/0WD0/majutsu")
+  :commands (majutsu
+             majutsu-diff-dwim
+             majutsu-log
+             majutsu-describe
+             majutsu-new
+             majutsu-bookmark
+             majutsu-squash
+             majutsu-rebase
+             majutsu-undo
+             majutsu-evolog
+             majutsu-git-push
+             majutsu-git-fetch)
   :custom
-  (magit-section-initial-visibility-alist '((file . hide)
-					    (stashes . hide)))
+  (magit-section-initial-visibility-alist '((jj-file . hide)
+                                           (file . hide)
+                                           (stashes . hide)))
   :init
   (evil-define-key '(normal visual motion) 'global
-    (kbd "<leader> g d") #'magit-diff-working-tree
-    (kbd "<leader> g g") #'magit-status))
+    (kbd "<leader> g g") #'majutsu
+    (kbd "<leader> g d") #'majutsu-diff-dwim
+    (kbd "<leader> g c") #'majutsu-describe
+    (kbd "<leader> g n") #'majutsu-new
+    (kbd "<leader> g l") #'majutsu-log
+    (kbd "<leader> g b") #'majutsu-bookmark
+    (kbd "<leader> g s") #'majutsu-squash
+    (kbd "<leader> g r") #'majutsu-rebase
+    (kbd "<leader> g u") #'majutsu-undo
+    (kbd "<leader> g e") #'majutsu-evolog
+    (kbd "<leader> g P") #'majutsu-git-push
+    (kbd "<leader> g F") #'majutsu-git-fetch)
+  :config
+  (majutsu-evil-setup))
 
 (provide 'init-git)
